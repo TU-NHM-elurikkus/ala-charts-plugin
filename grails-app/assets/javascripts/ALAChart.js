@@ -125,7 +125,7 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
                 backgroundColor: transparentColors(segmentColor,50),
                 data: []
             };
-            
+
             //set additional colors for bar horizontal-bar
             if ($.inArray(chartConfig.chartType, ['bar', 'horizontal-bar', 'horizontalBar']) >= 0) {
                 datastructure.datasets[keySeries].borderColor = transparentColors(segmentColor, 85);
@@ -561,7 +561,7 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
                     </div>\
                 </div>\
             </ul>').hide());
-        
+
         if (chartConfig && !chartConfig.hideOnce) {
             $topDiv.append($canvas).append($legend).append($progress);
         }
