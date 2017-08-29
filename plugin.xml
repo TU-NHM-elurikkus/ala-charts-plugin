@@ -2,5 +2,7 @@
   <title>Elurkkus Charts Plugin</title>
   <description>Standard ALA Charts implementation</description>
   <type>ElurikkusChartsGrailsPlugin</type>
-  <resources />
+  <resources>
+    <resource>au.org.ala.charts.ChartsTagLib</resource>
+  </resources>
 </plugin>
