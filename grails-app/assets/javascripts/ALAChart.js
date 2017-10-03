@@ -1,3 +1,5 @@
+//= require jquery-i18n-properties-1.2.7
+
 /**
  * @namespace
  */
@@ -267,7 +269,7 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
                 if (datastructure.datasets[0].data.length > 0) {
                     chartConfig.chart = drawChart(datastructure, labelToFq, $canvas, chartConfig, divId);
                 } else {
-                    $canvas.parent().append($("<label>No data to display</label>").addClass('chart-no-data-label'));
+                    $canvas.parent().append($('<label>' + $.i18n.prop('charts.noData') + '</label>').addClass('chart-no-data-label'));
 
                     $canvas.parent().find('.chart-canvas').detach();
                     $canvas.parent().find('.chart-legend').detach();
@@ -531,7 +533,8 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
             $topDiv.width('100%');
         }
 
-        var $title = $('<h3/>').addClass('chart-title').html(title);
+        var i18nTitle = $.i18n.prop('charts.titles.' + title.replace(/ /g, '').replace(/%/g, ''));
+        var $title = $('<h3/>').addClass('chart-title').html(i18nTitle);
         var $canvas = $('<canvas/>').addClass('chart-canvas');
         var $legend = $('<div/>').addClass('chart-legend').addClass('ala-doughnut-legend');
 
