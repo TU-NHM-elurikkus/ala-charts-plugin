@@ -421,9 +421,6 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
         var x = (facet) ? '&x=' + facet : '';
 
         var fsort = (facet === 'month') ? '&fsort=month' : '';
-        console.log("HELLO, HERE");
-        console.log(facet);
-        console.log(fsort);
 
         //default search service
         var queryUrl = chartOptions.biocacheServiceUrl + "/chart.json?q=" + query +
