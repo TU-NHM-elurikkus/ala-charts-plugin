@@ -418,12 +418,17 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
         var includeOtherSeries = (chartConfig.includeOtherSeries) ? "&seriesother=" + chartConfig.includeOtherSeries : "";
         var includeMissing = (chartConfig.hideEmptyValues) ? "&xmissing=" + (!chartConfig.hideEmptyValues) : "";
 
-        var x = (facet) ? "&x=" + facet : "";
+        var x = (facet) ? '&x=' + facet : '';
+
+        var fsort = (facet === 'month') ? '&fsort=month' : '';
+        console.log("HELLO, HERE");
+        console.log(facet);
+        console.log(fsort);
 
         //default search service
         var queryUrl = chartOptions.biocacheServiceUrl + "/chart.json?q=" + query +
             x + xranges +"&qc=" + queryContext + valueParam + chartConfig.sliderFq + seriesRanges + series + seriesFq +
-            includeOther + includeOtherSeries + includeMissing;
+            includeOther + includeOtherSeries + includeMissing + fsort;
 
         if(additionalFilter) {
             queryUrl = queryUrl + '&' + additionalFilter;
