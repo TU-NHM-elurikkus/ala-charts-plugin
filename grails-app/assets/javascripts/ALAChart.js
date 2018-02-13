@@ -266,10 +266,14 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
 
                 var $canvas = $('#' + divId).find('canvas');
 
-                if (datastructure.datasets[0].data.length > 0) {
+                if(datastructure && datastructure.datasets[0].data.length > 0) {
                     chartConfig.chart = drawChart(datastructure, labelToFq, $canvas, chartConfig, divId);
                 } else {
-                    $canvas.parent().append($('<label>' + $.i18n.prop('charts.noData') + '</label>').addClass('chart-no-data-label'));
+                    $canvas.parent().append($(
+                        '<label>' +
+                            $.i18n.prop('charts.noData') +
+                        '</label>'
+                    ).addClass('chart-no-data-label'));
 
                     $canvas.parent().find('.chart-canvas').detach();
                     $canvas.parent().find('.chart-legend').detach();
