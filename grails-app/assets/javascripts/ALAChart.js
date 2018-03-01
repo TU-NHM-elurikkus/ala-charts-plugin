@@ -319,9 +319,15 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
                 function (evt) {
                     var activePoints = chart.getElementsAtEvent(evt);
                     var chartLabels = Object.keys(labelToFq);
-                    var selectedKey = chartLabels[activePoints[0]._index];
-                    var url = chartOptions.biocacheWebappUrl + "/occurrences/search?q=" + chartOptions.query + "&fq=" + labelToFq[selectedKey];
-                    window.location.href = url;
+                    var activeIndex = activePoints[0] ? activePoints[0]._index : null;
+                    var selectedKey = chartLabels[activeIndex];
+
+                    if(selectedKey) {
+                        var url = chartOptions.biocacheWebappUrl + "/occurrences/search?q=" + chartOptions.query
+                            + "&fq=" + labelToFq[selectedKey];
+
+                        window.location.href = url;
+                    }
                 }
             );
         }
