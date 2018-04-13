@@ -266,7 +266,7 @@ ALA.BiocacheCharts = function (chartsDivId, chartOptions) {
 
                 var $canvas = $('#' + divId).find('canvas');
 
-                if(datastructure && datastructure.datasets[0].data.length > 0) {
+                if(datastructure.datasets.length && datastructure.datasets[0].data.length > 0) {
                     chartConfig.chart = drawChart(datastructure, labelToFq, $canvas, chartConfig, divId);
                 } else {
                     $canvas.parent().append($(
