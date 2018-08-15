@@ -1,6 +1,26 @@
-.ala-doughnut-legend ul { list-style: none;  list-style-type: none; }
-.ala-doughnut-legend ul li { list-style: none;  list-style-type: none; }
-.ala-doughnut-legend li span { width: 5px; height:30px; padding-left:10px; padding-right:10px; margin-right:10px; border-radius: 5px;}
+.ala-doughnut-legend ul {
+    list-style-type: none;
+    list-style: none;
+}
+
+.ala-doughnut-legend ul li {
+    color: #222;
+    font-family: Arial;
+    font-size: 12px;
+    list-style-type: none;
+    list-style: none;
+}
+
+.ala-doughnut-legend li span {
+    border-radius: 12px;
+    font-size: 11px;
+    height: 6px;
+    margin-right: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 6px;
+}
+
 
 .hint {
     display: inline-block;
@@ -115,4 +135,39 @@
 
 .chart-title {
     margin-bottom: 1rem;
+    margin-top: 5px;
+}
+
+.chart {
+    display: inline-block;
+    margin: 1rem;
+    /* The 2rem here compensates for the 1rem horizontal margin. */
+    max-width: calc(100% - 2rem);
+    position: relative;
+    width: 600px;
+}
+
+.charts-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -1rem;
+    max-width: 1600px;
+}
+
+@media(min-width: 1400px) {
+    .charts-container {
+        -webkit-box-pack: start;
+           -ms-flex-pack: start;
+        justify-content: flex-start
+    }
+}
+
+/* Taxon pie chart */
+#taxa-chart {
+    overflow-x: auto;
+    height: 460px;
 }
